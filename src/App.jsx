@@ -138,7 +138,8 @@ const Header = ({ onShopClick }) => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-[#8cc63f] rounded-full blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
                             <div className={`relative p-2 md:p-2.5 rounded-full border-2 transition-colors duration-300 ${scrolled ? 'bg-[#fcf8e3] border-[#8cc63f]' : 'bg-[#fcf8e3] border-white/50'}`}>
-                                <img src="v.png" alt="Logo" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+                                {/* INCREASED LOGO SIZE HERE */}
+                                <img src="v.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                             </div>
                         </div>
                         <div className="flex flex-col">
@@ -616,7 +617,8 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-1 space-y-6">
                         <div className="flex items-center gap-3">
                             <div className="bg-[#fcf8e3] p-2 rounded-lg">
-                                <Leaf className="text-[#0f3d32]" size={24} />
+                                {/* REPLACED LEAF ICON WITH LOGO IMAGE */}
+                                <img src="v.png" alt="Logo" className="w-8 h-8 object-contain" />
                             </div>
                             <span className="font-bold text-xl md:text-2xl tracking-tight">Vivasayam to Villa</span>
                         </div>
@@ -699,6 +701,21 @@ const Footer = () => {
 
 const App = () => {
     const [isMaintenanceOpen, setIsMaintenanceOpen] = useState(false);
+
+    // New Effect for Title and Favicon
+    useEffect(() => {
+        // Set Title
+        document.title = "Vivasayam to Villa Superfresh";
+
+        // Set Favicon
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        link.href = 'v.png';
+    }, []);
 
     const openMaintenance = () => setIsMaintenanceOpen(true);
     const closeMaintenance = () => setIsMaintenanceOpen(false);
