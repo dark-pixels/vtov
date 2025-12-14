@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS from original index.html */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob { animation: blob 7s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+@keyframes swing {
+    0%, 100% { transform: rotate(0deg); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+}
+.group-hover\:animate-swing:hover { animation: swing 1s ease-in-out; }
+
+@keyframes falling-leaf {
+    0% { transform: translate(0, -10%) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translate(0, 100vh) rotate(360deg) translateX(-50px); opacity: 0; }
+}
+.animate-falling-leaf {
+    animation-name: falling-leaf;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.perspective-1000 { perspective: 1000px; }
+.perspective-2000 { perspective: 2000px; }
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+
+@keyframes spin-reverse-slow {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+.animate-spin-reverse-slow { animation: spin-reverse-slow 30s linear infinite; }
+
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.animate-bounce-slow { animation: bounce-slow 3s infinite ease-in-out; }
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+.animate-pulse-slow { animation: pulse-slow 4s infinite ease-in-out; }
+
+@keyframes orbit-1 {
+    0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+    25% { transform: translateX(120px) translateY(40px) scale(0.8); z-index: 0; }
+    50% { transform: translateX(0) translateY(80px) scale(1); z-index: 20; }
+    75% { transform: translateX(-120px) translateY(40px) scale(1.2); z-index: 40; }
+    100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+}
+.animate-orbit-1 { animation: orbit-1 12s infinite linear; }
+
+@keyframes orbit-2 {
+    0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+    25% { transform: translateX(-100px) translateY(-50px) scale(1.2); z-index: 40; }
+    50% { transform: translateX(0) translateY(-100px) scale(1); z-index: 20; }
+    75% { transform: translateX(100px) translateY(-50px) scale(0.8); z-index: 0; }
+    100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+}
+.animate-orbit-2 { animation: orbit-2 15s infinite linear; }
+
+@keyframes orbit-3 {
+    0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+    50% { transform: translateX(150px) translateY(50px) scale(0.8); z-index: 0; }
+    100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; }
+}
+.animate-orbit-3 { animation: orbit-3 18s infinite linear; }
