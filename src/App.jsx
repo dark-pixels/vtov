@@ -135,13 +135,12 @@ const Header = ({ onShopClick }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     <div className="flex-shrink-0 flex items-center gap-2 md:gap-3 group cursor-pointer z-50">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-[#8cc63f] rounded-full blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
-                            <div className={`relative p-2 md:p-2.5 rounded-full border-2 transition-colors duration-300 ${scrolled ? 'bg-[#fcf8e3] border-[#8cc63f]' : 'bg-[#fcf8e3] border-white/50'}`}>
-                                {/* INCREASED LOGO SIZE HERE */}
-                                <img src="v.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
-                            </div>
-                        </div>
+                        {/* Logo Image Only - Circle Removed */}
+                        <img
+                            src="v.png"
+                            alt="Logo"
+                            className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
+                        />
                         <div className="flex flex-col">
                             <span className={`font-bold text-lg md:text-xl tracking-tight leading-none transition-colors duration-300 ${scrolled ? 'text-[#0f3d32]' : 'text-[#0f3d32]'}`}>Vivasayam to Villa</span>
                             <span className="text-[10px] text-[#8cc63f] font-bold tracking-widest uppercase mt-0.5">Superfresh</span>
@@ -616,10 +615,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 md:mb-16">
                     <div className="col-span-1 md:col-span-1 space-y-6">
                         <div className="flex items-center gap-3">
-                            <div className="bg-[#fcf8e3] p-2 rounded-lg">
-                                {/* REPLACED LEAF ICON WITH LOGO IMAGE */}
-                                <img src="v.png" alt="Logo" className="w-8 h-8 object-contain" />
-                            </div>
+                            {/* Logo in Footer - Circle Removed, Increased Size */}
+                            <img src="v.png" alt="Logo" className="w-12 h-12 object-contain" />
                             <span className="font-bold text-xl md:text-2xl tracking-tight">Vivasayam to Villa</span>
                         </div>
                         <p className="text-gray-300 leading-relaxed text-sm">
