@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ShoppingBasket, Truck, Leaf, Users, Menu, X, Phone, Mail, MapPin, AlertCircle, ArrowRight, Sun, Droplets, Heart, Star, Sprout, Calendar, ChevronDown, CloudRain, Flower } from 'lucide-react';
+import { ShoppingBasket, Truck, Leaf, Users, Menu, X, Phone, Mail, MapPin, AlertCircle, ArrowRight, Sun, Droplets, Heart, Star, Sprout, Calendar, ChevronDown, CloudRain, Flower, Moon } from 'lucide-react';
 
 // --- Theme Colors ---
 // Primary Text/Accents: #0f3d32 (Deep Green - Used for text/buttons)
@@ -328,62 +328,67 @@ const Hero = ({ onShopClick }) => {
                         </RevealOnScroll>
                     </div>
 
-                    {/* RIGHT: Interactive Ecosystem Visual */}
+                    {/* RIGHT: Solar System / Day & Night Cycle Visual */}
                     <div
                         className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center perspective-1000"
                         ref={containerRef}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
-                        {/* 3D Container */}
+                        {/* 3D Container for Orbits */}
                         <div
-                            className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] transition-transform duration-100 ease-out"
+                            className="relative w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] transition-transform duration-100 ease-out"
                             style={{ transform: `rotateY(${mousePos.x}deg) rotateX(${-mousePos.y}deg)` }}
                         >
-                            {/* Orbit Rings */}
-                            <div className="absolute inset-0 border border-dashed border-[#8cc63f]/30 rounded-full animate-spin-slow" style={{ transform: 'rotateX(60deg)' }}></div>
-                            <div className="absolute inset-10 border border-[#0f3d32]/10 rounded-full animate-spin-reverse-slow"></div>
+                            {/* --- ORBIT 1: Time & Weather Cycle (Outer Ring) --- */}
+                            <div className="absolute inset-[-40px] z-10 pointer-events-none rounded-full border border-dashed border-[#8cc63f]/30 animate-spin-slow">
+                                {/* This entire container spins slowly, representing the day cycle */}
 
-                            {/* Orbiting Elements (The Ecosystem) */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 animate-orbit-1 z-20">
-                                <div className="bg-white p-3 rounded-xl shadow-lg transform hover:scale-110 transition-transform">
-                                    <Sun className="text-yellow-400" size={28} />
+                                {/* Sun (Day) - Top */}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <div className="bg-white p-3 rounded-full shadow-lg border-2 border-yellow-100 animate-spin-reverse-slow">
+                                        <Sun className="text-yellow-500 fill-yellow-100" size={32} />
+                                    </div>
+                                </div>
+
+                                {/* Moon (Night) - Bottom */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                                    <div className="bg-slate-800 p-3 rounded-full shadow-lg border-2 border-slate-600 animate-spin-reverse-slow">
+                                        <Moon className="text-white fill-slate-200" size={28} />
+                                    </div>
+                                </div>
+
+                                {/* Cloud (Weather) - Right side */}
+                                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                                    <div className="bg-white p-2 rounded-full shadow-lg border border-blue-100 animate-spin-reverse-slow">
+                                        <CloudRain className="text-blue-400" size={28} />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="absolute bottom-10 right-0 animate-orbit-2 z-0">
-                                <div className="bg-white p-3 rounded-xl shadow-lg transform hover:scale-110 transition-transform">
-                                    <CloudRain className="text-blue-400" size={28} />
-                                </div>
-                            </div>
-                            <div className="absolute top-1/2 -left-4 animate-orbit-3 z-20">
-                                <div className="bg-white p-3 rounded-xl shadow-lg transform hover:scale-110 transition-transform">
-                                    <Truck className="text-[#0f3d32]" size={28} />
+
+                            {/* --- ORBIT 2: Delivery Truck (Inner Ring) --- */}
+                            {/* This ring spins faster, showing the truck is constantly moving through the cycle */}
+                            <div className="absolute inset-[-10px] z-20 pointer-events-none rounded-full border border-[#0f3d32]/5 animate-spin-medium">
+                                <div className="absolute top-1/2 -left-[20px] -translate-y-1/2">
+                                    <div className="bg-[#0f3d32] p-2.5 rounded-full shadow-xl border-2 border-white animate-spin-reverse-medium transform hover:scale-125 transition-transform">
+                                        <Truck className="text-white" size={24} />
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Main Floating Card */}
-                            <div className="absolute inset-0 flex items-center justify-center transform translate-z-20">
-                                <div className="relative bg-white/90 backdrop-blur-xl p-8 sm:p-12 rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,61,50,0.2)] border border-white flex flex-col items-center justify-center text-center group cursor-default">
-
+                            {/* Main Central Planet (Fresh Box) */}
+                            <div className="absolute inset-0 flex items-center justify-center transform translate-z-20 z-0">
+                                <div className="relative bg-white/95 backdrop-blur-xl p-8 sm:p-12 rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,61,50,0.2)] border border-white flex flex-col items-center justify-center text-center group cursor-default">
                                     {/* Badge */}
                                     <div className="absolute -top-6 -right-6 bg-[#8cc63f] text-[#0f3d32] w-20 h-20 rounded-full flex flex-col items-center justify-center font-bold text-xs shadow-xl border-4 border-white animate-bounce-slow z-30">
                                         <span className="text-lg">Fresh</span>
                                         <span>DAILY</span>
                                     </div>
-
                                     {/* Icon */}
                                     <div className="bg-gradient-to-br from-[#fcf8e3] to-[#e6f4d0] p-6 rounded-[2rem] mb-6 shadow-inner transform group-hover:scale-110 transition-transform duration-500">
                                         <ShoppingBasket size={64} className="text-[#0f3d32]" />
                                     </div>
-
                                     <h3 className="text-2xl font-bold text-[#0f3d32] mb-2 font-serif">Today's Harvest</h3>
-                                    <div className="flex gap-2 justify-center mb-4">
-                                        <Star size={16} className="text-yellow-400 fill-current" />
-                                        <Star size={16} className="text-yellow-400 fill-current" />
-                                        <Star size={16} className="text-yellow-400 fill-current" />
-                                        <Star size={16} className="text-yellow-400 fill-current" />
-                                        <Star size={16} className="text-yellow-400 fill-current" />
-                                    </div>
                                     <div className="text-sm font-medium text-gray-500 bg-gray-50 px-4 py-2 rounded-full border border-gray-100">
                                         Spinach • Carrots • Okra
                                     </div>
@@ -768,14 +773,11 @@ const App = () => {
         @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         .animate-pulse-slow { animation: pulse-slow 4s infinite ease-in-out; }
 
-        @keyframes orbit-1 { 0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } 25% { transform: translateX(120px) translateY(40px) scale(0.8); z-index: 0; } 50% { transform: translateX(0) translateY(80px) scale(1); z-index: 20; } 75% { transform: translateX(-120px) translateY(40px) scale(1.2); z-index: 40; } 100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } }
-        .animate-orbit-1 { animation: orbit-1 12s infinite linear; }
+        @keyframes spin-medium { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-medium { animation: spin-medium 15s linear infinite; }
 
-        @keyframes orbit-2 { 0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } 25% { transform: translateX(-100px) translateY(-50px) scale(1.2); z-index: 40; } 50% { transform: translateX(0) translateY(-100px) scale(1); z-index: 20; } 75% { transform: translateX(100px) translateY(-50px) scale(0.8); z-index: 0; } 100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } }
-        .animate-orbit-2 { animation: orbit-2 15s infinite linear; }
-        
-        @keyframes orbit-3 { 0% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } 50% { transform: translateX(150px) translateY(50px) scale(0.8); z-index: 0; } 100% { transform: translateX(0) translateY(0) scale(1); z-index: 20; } }
-        .animate-orbit-3 { animation: orbit-3 18s infinite linear; }
+        @keyframes spin-reverse-medium { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+        .animate-spin-reverse-medium { animation: spin-reverse-medium 15s linear infinite; }
       `}</style>
 
             {/* GLOBAL Falling Leaves - Covers entire App */}
