@@ -134,13 +134,15 @@ const Header = ({ onShopClick }) => {
         <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4 md:py-6'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
-                    <div className="flex-shrink-0 flex items-center gap-2 md:gap-3 group cursor-pointer z-50">
-                        {/* Logo Image Only - Circle Removed */}
-                        <img
-                            src="v.png"
-                            alt="Logo"
-                            className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
-                        />
+                    <div className="flex-shrink-0 flex items-center gap-3 group cursor-pointer z-50">
+                        {/* Logo Image with Circle Highlight */}
+                        <div className="relative p-1.5 md:p-2 bg-white rounded-full shadow-lg border-2 border-[#8cc63f] hover:scale-110 transition-transform duration-300">
+                            <img
+                                src="v.png"
+                                alt="Logo"
+                                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                            />
+                        </div>
                         <div className="flex flex-col">
                             <span className={`font-bold text-lg md:text-xl tracking-tight leading-none transition-colors duration-300 ${scrolled ? 'text-[#0f3d32]' : 'text-[#0f3d32]'}`}>Vivasayam to Villa</span>
                             <span className="text-[10px] text-[#8cc63f] font-bold tracking-widest uppercase mt-0.5">Superfresh</span>
@@ -292,7 +294,7 @@ const Hero = ({ onShopClick }) => {
                         <RevealOnScroll delay={200} direction="left">
                             <p className="mt-6 text-xl text-gray-600 sm:max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                                 We don't just deliver vegetables; we deliver the sunrise.
-                                Experience the journey from <span className="text-[#8cc63f] font-bold">Soil to Soul</span> in 12 hours.
+                                Experience the journey from <span className="text-[#8cc63f] font-bold">Soil to Soul</span>.
                             </p>
                         </RevealOnScroll>
 
@@ -316,7 +318,7 @@ const Hero = ({ onShopClick }) => {
                         <RevealOnScroll delay={400} direction="up">
                             <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-80">
                                 <div className="flex flex-col items-center lg:items-start">
-                                    <span className="text-3xl font-bold text-[#8cc63f]">12h</span>
+                                    <span className="text-3xl font-bold text-[#8cc63f]">18h</span>
                                     <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Harvest to Home</span>
                                 </div>
                                 <div className="h-8 w-px bg-[#0f3d32]/20"></div>
@@ -413,10 +415,10 @@ const StatsSection = () => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x divide-white/10">
                 {[
-                    { label: "Families Served", value: "500+" },
-                    { label: "Partner Farmers", value: "50+" },
-                    { label: "Daily Harvests", value: "100%" },
-                    { label: "Villages Supported", value: "12" },
+                    { label: "Families Served", value: "3,600+" },
+                    { label: "Partner Farmers", value: "500+" },
+                    { label: "Daily Harvests", value: "18 Hrs" },
+                    { label: "Less Food Waste", value: "40%" },
                 ].map((stat, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 100}>
                         <div className="p-2 md:p-4 group cursor-default">
@@ -467,7 +469,7 @@ const Features = () => {
                         <FeatureCard
                             icon={Truck}
                             title="Hyper-Local Delivery"
-                            description="Harvested at 6 AM, delivered by 6 PM. We strictly serve gated communities within 20km."
+                            description="Harvested and delivered within 18 hours. We strictly serve gated communities within our rapid logistics network."
                             color="green"
                         />
                     </RevealOnScroll>
@@ -475,7 +477,7 @@ const Features = () => {
                         <FeatureCard
                             icon={Leaf}
                             title="Zero-Chemical"
-                            description="We practice traditional 'Iyarkai Vivasayam' (Natural Farming). No chemicals, just nature."
+                            description="We practice traditional 'Iyarkai Vivasayam' (Natural Farming). No chemicals, just nature, direct from farmers."
                             color="yellow"
                         />
                     </RevealOnScroll>
@@ -483,7 +485,7 @@ const Features = () => {
                         <FeatureCard
                             icon={Users}
                             title="Farmer First"
-                            description="No middlemen. Your purchase directly supports the farmer's family with fair pricing."
+                            description="No middlemen. Your purchase increases farmer income by 30% and reduces food waste by 40%."
                             color="blue"
                         />
                     </RevealOnScroll>
@@ -596,7 +598,7 @@ const CTA = ({ onShopClick }) => {
                         Ready to taste <span className="italic text-[#8cc63f]">real</span> vegetables?
                     </h2>
                     <p className="text-lg md:text-xl text-[#4a6b63] mb-8 md:mb-12 max-w-2xl mx-auto">
-                        Join 500+ families in OMR and ECR who have switched to Vivasayam to Villa Superfresh.
+                        Join 3,600+ families in OMR and ECR who have switched to Vivasayam to Villa Superfresh.
                     </p>
                     <button
                         onClick={onShopClick}
@@ -620,8 +622,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 md:mb-16">
                     <div className="col-span-1 md:col-span-1 space-y-6">
                         <div className="flex items-center gap-3">
-                            {/* Logo in Footer - Circle Removed, Increased Size */}
-                            <img src="v.png" alt="Logo" className="w-12 h-12 object-contain" />
+                            {/* Logo in Footer - Circle Highlight */}
+                            <div className="p-1.5 bg-white rounded-full shadow-lg border border-[#8cc63f]">
+                                <img src="v.png" alt="Logo" className="w-10 h-10 object-contain" />
+                            </div>
                             <span className="font-bold text-xl md:text-2xl tracking-tight">Vivasayam to Villa</span>
                         </div>
                         <p className="text-gray-300 leading-relaxed text-sm">
@@ -773,11 +777,30 @@ const App = () => {
         @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         .animate-pulse-slow { animation: pulse-slow 4s infinite ease-in-out; }
 
-        @keyframes spin-medium { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .animate-spin-medium { animation: spin-medium 15s linear infinite; }
+        @keyframes orbit-continuous {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .animate-orbit-continuous { animation: orbit-continuous 20s linear infinite; }
 
-        @keyframes spin-reverse-medium { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-        .animate-spin-reverse-medium { animation: spin-reverse-medium 15s linear infinite; }
+        @keyframes orbit-continuous-fast {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .animate-orbit-continuous-fast { animation: orbit-continuous-fast 8s linear infinite; }
+
+        /* Counter-rotate to keep icons upright */
+        @keyframes spin-reverse-fast { 
+          0% { transform: rotate(0deg); } 
+          100% { transform: rotate(-360deg); } 
+        }
+        .animate-spin-reverse-fast { animation: spin-reverse-fast 20s linear infinite; }
+
+        @keyframes spin-reverse-faster { 
+          0% { transform: rotate(0deg); } 
+          100% { transform: rotate(-360deg); } 
+        }
+        .animate-spin-reverse-faster { animation: spin-reverse-faster 8s linear infinite; }
       `}</style>
 
             {/* GLOBAL Falling Leaves - Covers entire App */}
