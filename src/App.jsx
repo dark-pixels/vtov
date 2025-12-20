@@ -406,7 +406,7 @@ const StatsSection = () => (
                     { label: "Chemical Free", value: "100%" },
                     { label: "Families Served", value: "3,600+" },
                     { label: "Partner Farmers", value: "500+" },
-                    { label: "Less Food Waste", value: "0%" },
+                    { label: "Food Waste", value: "0%" },
                 ].map((stat, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 100}>
                         <div className="p-2 md:p-4 group cursor-default">
