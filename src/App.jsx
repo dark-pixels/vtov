@@ -319,11 +319,6 @@ const Hero = ({ onShopClick }) => {
                                     <span className="text-3xl font-bold text-[#8cc63f]">18h</span>
                                     <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Harvest to Home</span>
                                 </div>
-                                <div className="h-8 w-px bg-[#0f3d32]/20"></div>
-                                <div className="flex flex-col items-center lg:items-start">
-                                    <span className="text-3xl font-bold text-[#8cc63f]">100%</span>
-                                    <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Chemical Free</span>
-                                </div>
                             </div>
                         </RevealOnScroll>
                     </div>
@@ -411,12 +406,11 @@ const StatsSection = () => (
     <div className="bg-gradient-to-r from-[#0f3d32] to-[#1a5c4b] py-12 md:py-16 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pattern-dots"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x divide-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:divide-x divide-white/10">
                 {[
                     { label: "Families Served", value: "3,600+" },
                     { label: "Partner Farmers", value: "500+" },
-                    { label: "Daily Harvests", value: "18 Hrs" },
-                    { label: "Less Food Waste", value: "40%" },
+                    { label: "Chemical Free", value: "100%" },
                 ].map((stat, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 100}>
                         <div className="p-2 md:p-4 group cursor-default">
