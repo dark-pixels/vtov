@@ -313,14 +313,7 @@ const Hero = ({ onShopClick }) => {
                             </div>
                         </RevealOnScroll>
 
-                        <RevealOnScroll delay={400} direction="up">
-                            <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-80">
-                                <div className="flex flex-col items-center lg:items-start">
-                                    <span className="text-3xl font-bold text-[#8cc63f]">18h</span>
-                                    <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Harvest to Home</span>
-                                </div>
-                            </div>
-                        </RevealOnScroll>
+
                     </div>
 
                     {/* RIGHT: Solar System / Day & Night Cycle Visual */}
