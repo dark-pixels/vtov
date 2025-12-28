@@ -135,14 +135,12 @@ const Header = ({ onShopClick }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     <div className="flex-shrink-0 flex items-center gap-3 group cursor-pointer z-50">
-                        {/* Logo Image with Circle Highlight */}
-                        <div className="relative p-1.5 md:p-2 bg-white rounded-full shadow-lg border-2 border-[#8cc63f] hover:scale-110 transition-transform duration-300">
-                            <img
-                                src="v.png"
-                                alt="Logo"
-                                className="w-10 h-10 md:w-12 md:h-12 object-contain"
-                            />
-                        </div>
+                        {/* Logo Image Only - Circle Removed & Size Increased */}
+                        <img
+                            src="v.png"
+                            alt="Logo"
+                            className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md hover:scale-110 transition-transform duration-300"
+                        />
                         <div className="flex flex-col">
                             <span className={`font-bold text-lg md:text-xl tracking-tight leading-none transition-colors duration-300 ${scrolled ? 'text-[#0f3d32]' : 'text-[#0f3d32]'}`}>Vivasayam to Villa</span>
                             <span className="text-[10px] text-[#8cc63f] font-bold tracking-widest uppercase mt-0.5">Superfresh</span>
@@ -315,7 +313,19 @@ const Hero = ({ onShopClick }) => {
                             </div>
                         </RevealOnScroll>
 
-
+                        <RevealOnScroll delay={400} direction="up">
+                            <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-80">
+                                <div className="flex flex-col items-center lg:items-start">
+                                    <span className="text-3xl font-bold text-[#8cc63f]">18h</span>
+                                    <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Harvest to Home</span>
+                                </div>
+                                <div className="h-8 w-px bg-[#0f3d32]/20"></div>
+                                <div className="flex flex-col items-center lg:items-start">
+                                    <span className="text-3xl font-bold text-[#8cc63f]">100%</span>
+                                    <span className="text-xs font-bold text-[#0f3d32] uppercase tracking-wider">Chemical Free</span>
+                                </div>
+                            </div>
+                        </RevealOnScroll>
                     </div>
 
                     {/* RIGHT: Solar System / Day & Night Cycle Visual */}
@@ -403,10 +413,10 @@ const StatsSection = () => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x divide-white/10">
                 {[
-                    { label: "Chemical Free", value: "100%" },
                     { label: "Families Served", value: "3,600+" },
                     { label: "Partner Farmers", value: "500+" },
-                    { label: "Food Waste", value: "0%" },
+                    { label: "Daily Harvests", value: "18 Hrs" },
+                    { label: "Less Food Waste", value: "40%" },
                 ].map((stat, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 100}>
                         <div className="p-2 md:p-4 group cursor-default">
@@ -610,10 +620,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 md:mb-16">
                     <div className="col-span-1 md:col-span-1 space-y-6">
                         <div className="flex items-center gap-3">
-                            {/* Logo in Footer - Circle Highlight */}
-                            <div className="p-1.5 bg-white rounded-full shadow-lg border border-[#8cc63f]">
-                                <img src="v.png" alt="Logo" className="w-10 h-10 object-contain" />
-                            </div>
+                            {/* Logo in Footer - Circle Removed & Size Increased */}
+                            <img src="v.png" alt="Logo" className="w-16 h-16 object-contain drop-shadow-md" />
                             <span className="font-bold text-xl md:text-2xl tracking-tight">Vivasayam to Villa</span>
                         </div>
                         <p className="text-gray-300 leading-relaxed text-sm">
